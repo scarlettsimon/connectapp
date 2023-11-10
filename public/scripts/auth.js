@@ -55,6 +55,7 @@ export async function handleSignUp() {
             alert(error.message);
         } else {
             alert('SignUp successful');
+            window.location.href = "home.html";
         }
     } catch (error) {
         console.error('Error:', error.message);

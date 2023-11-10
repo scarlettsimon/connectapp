@@ -4,16 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Profile Card</title>
     <link rel="stylesheet" href="/public/styles/styles.css">
     <script type="module" src="public/scripts/auth.js" defer></script>
     <script src="public/scripts/script.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        HOME
+    <div class="header">
+        <h1>CHERE</h1>
     </div>
+    <div class="profile-card">
+        <div class="profile-header">
+            <img src="./public/images/profilepicturejohndoe.svg" alt="John Doe">
+            <h2>John Doe</h2>
+            <p>25</p>
+        </div>
+        <div class="profile-content">
+            <img src="./public/images/profilepicturejohndoe.svg" alt="John Doe">
+            <p>Aliquam in metus sit amet risus semper viverra...</p>
+        </div>
+        <button class="view-profile-btn">VIEW PROFILE</button>
+    </div>
+    <div class="navigation">
+        <button class="nav-btn active">🏠</button>
+        <button class="nav-btn">➕</button>
+        <button class="nav-btn">👤</button>
+    </div>
+
 </body>
 
 </html>
