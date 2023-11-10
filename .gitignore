@@ -1,1 +1,39 @@
+# Ignore Node.js related files and folders
+node_modules/
+
+# Ignore build artifacts
+dist/
+build/
+out/
+
+# Ignore local development environment configuration
+.env
+
+# Ignore logs and other generated files
+*.log
+*.log.*
+npm-debug.log*
+
+# Ignore Visual Studio Code settings
 .vscode/
+
+# Ignore operating system generated files
+.DS_Store
+Thumbs.db
+
+# Ignore dependency lock files
+yarn.lock
+package-lock.json
+
+# Ignore any backup files
+*~
+
+# Ignore compiled files
+*.min.css
+*.min.js
+
+# Ignore environment-specific configuration
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
