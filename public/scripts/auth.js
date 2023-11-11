@@ -45,17 +45,27 @@ export async function handleSignUp() {
         const { data, error } = await supabase.auth.signUp({
             email,
             password,
-            data: {
-                name,
-                surname
-            }
         });
 
         if (error) {
             alert(error.message);
         } else {
-            alert('SignUp successful');
-            window.location.href = "home.html";
+            const { data, error: insertError } = await supabase
+                .from('users')
+                .upsert([
+                    {
+                        email,
+                        name,
+                        surname,
+                    },
+                ]);
+
+            if (insertError) {
+                console.error('Error inserting data:', insertError.message);
+            } else {
+                alert('SignUp successful');
+                window.location.href = "home.html";
+            }
         }
     } catch (error) {
         console.error('Error:', error.message);
@@ -68,3 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
         signUpButton.addEventListener('click', handleSignUp);
     }
 });
+
+async function getUsers() {
+    let { data, error } = await supabase
+        .from('users') // replace with your table name
+        .select('*') // list the columns you need
+        .eq('id', 'user_id') // use appropriate filtering
+    return data;
+}
+
+async function getUser(user) {
+    let { data, error } = await supabase
+        .from('users') 
+        .select('*') 
+        .eq('id', 'user_id')
+    return data;
+}
+
+function populateForm(userData) {
+    document.getElementById('John Doe').value = userData.name;
+    document.getElementById('johndoe@gmail.com').value = userData.email;
+}
