@@ -14,24 +14,12 @@
     <div class="header">
         <h1>CHERE</h1>
     </div>
-    <div class="profile-card">
-        <div class="profile-header">
-            <img src="./public/images/profilepicturejohndoe.svg" alt="John Doe">
-            <h2>John Doe</h2>
-            <p>25</p>
-        </div>
-        <div class="profile-content">
-            <img src="./public/images/profilepicturejohndoe.svg" alt="John Doe">
-            <p>Aliquam in metus sit amet risus semper viverra...</p>
-        </div>
-        <button class="view-profile-btn">VIEW PROFILE</button>
-    </div>
+    <div id="profile-cards-container" style="padding-bottom: 100px;"></div>
     <div class="navigation">
-        <button class="nav-btn active">🏠</button>
+        <button class="nav-btn active" onclick="goToHome()">🏠</button>
         <button class="nav-btn">➕</button>
-        <button class="nav-btn">👤</button>
+        <button class="nav-btn" onclick="goToProfile()">👤</button>
     </div>
-
 </body>
 
 </html>
